@@ -1,103 +1,149 @@
-# JS类型  
-五大原始--number,string,boolean,null,undefined  
-一种object对象类型，对象类型又包括--array,date,function
+# HTML
+* 语义强调  em, strong
+* span不为强调，为了设置单独样式  
+* <blockquote>块引用，两端缩进样式。<q>简短文本应用，加引号  
+*  ```&nbsp; ```
+    为字符实体，显示空格  
+* <code>标签只能插入一行代码，如果要插入多行代码，使用<pre>标签  
+* <div>为网页划分独立的版块,通常使用id区分  
+* <tbody>…</tbody>：要等表格内容全部下载完才会显示  
+摘要
+	```<table summary="表格简介文本">```  
+> 摘要的内容是不会在浏览器中显示出来的  
+它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。  
+	```<caption>标题文本</caption>```会显示title
 
-# 巧用+/-规则转换类型
+链接  
+	title属性的作用 - 鼠标滑过链接文字时会显示这个属性的文本内容  
+	href=mailto - 后面同时有多个参数的话，第一个参数必须以“?”开头，后面的参数每一个都以“&”分隔。
 
-把字符串变量转换成数字：num-0  
-把数字变量转化成字符串型：num+''　　
-# 比较
-#### 类型相同  
-```null===null```  
-```undefined===undefined```  
-NaN和任何东西都不相等，包括它本身  ```NaN≠NaN```  
-Object同类型不相等，除非和它本身作比较 ``` new object() ≠ new object()```, ```x===x```  
-#### 类型不同
-a === b 类型不同直接返回false  
-a  == b 类型不同会尝试隐式转换(尝试类型转换和比较)  
-    number== string // 把字符串转化为数字比较  
-    boolean== ？(任何) // bool值转化为数字1或0  
-    object == number|string // 尝试对象转为基本类型 
-```new String('hi')=='hi' //true```  
+Input  
+> 当 type="radio" 时，控件为单选框, name 取值一定要一致  
+> 当 type="checkbox" 时，控件为复选框
 
-# 包装类型
-number string boolean 三种原始数据类型是有各自对应的对象包装类型的  
-如果对一个原始的数据类型比如说var string = "xiaoyu" 进行对象的操作js会智能地将原始数据类型转换为一个对应的包装类型  ```string.length```  
-等到你的操作结束之后这个临时产生的包装类型就会自动销毁。```string.tempobj```
+# CSS
+内联式(属性) > 嵌入式(<style>) > 外部式
 
-# 类型检测
-5种方法
-1. typeof 最简单的方法，以字符串的方式返回类型 ```typeof "bob" === "string"```
-    > 弊端是null的失效(typeof返回的是"object"，因此不可以用来检测)
-2. 对象 instanceof 函数 原形链
-    > 弊端原生对象在不同iframe和window检测失效  
+* 子选择器 '>'  
+用于选择指定标签元素的第一代子元素。如右侧代码编辑器中的代码：  
+```	.food>li{border:1px solid red;}```
+  > 这行代码会使class名为food下的子元素li（水果、蔬菜）加入红色实线边框。
 
+* 包含(后代)选择器 ' '  
+作用于元素的第一代后代，空格作用于元素的所有后代
+
+* all选择器 '*'
+
+* 伪类选择符，它允许给html不存在的标签（标签的某种状态）设置样式
+
+* 分组选择符 ','  
+```h1,span{color:red;}```  
+它相当于下面两行代码：
+```h1{color:red;} span{color:red;}```
+
+* 权值  
+标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100。例如下面的代码：
     ```
-    function Student(){}
-    function Person(){}
-    Student.prototype = new Person() //student指向person
-    var bob = new Student()
-    //bob instanceof student -> true
-    //bob instanceof person -> true
-    var bob_mom = new Person()
-    //mom instanceof student -> false
-    //mom instanceof person -> true
+    p{color:red;} /*权值为1*/
+    p span{color:green;} /*权值为1+1=2*/
+    .warning{color:white;} /*权值为10*/
+    p span.warning{color:purple;} /*权值为1+1+10=12*/
+    #footer .note p{color:yellow;} /*权值为100+10+1=111*/
     ```
-3. Object.prototype.toString.apply(函数)
-    > 弊端null和undefined失效(IE返回object)
+> 注意：继承权值很低，有的文献提出它只有0.1，所以可以理解为继承的权值最低。
 
-比较小窍门  
-× ```arr1.sort().toString===arr2.sort().toString```  
-× 比较类型保险款```Object.prototype.toString.apply(null)-> [Object Null]```
+* css样式的重要性```!important```
+样式优先级为：浏览器默认的样式 < 网页制作者样式 < 用户自己设置的样式，但记住!important优先级样式是个例外，权值高于用户自己设置的样式。
 
-# 表达式expression
-1. 原始表达式 // 常量、直接量、关键字、变量 3.14、"test"、this、null、i、k、j
-2. 初始化表达式 //[1,2]、{x:1, y:2}
-3. 函数表达式 //  var fe = function(){}、(function(){})()
-4. 属性访问表达式 //  var o = {x:1} 可以用 o.x、o['x']来访问
-5. 调用表达式 // func()；
-6. 对象创建表达式 // new Func(1,2)、new Object
+* absolute：  
+	* 无已定位的祖先元素则以<HTML>为基准偏移  
+	* 有已定位的祖先元素 e.g.relative,则以距离最近的且已定位的祖先元素为基准偏移  
+	* 位置会随滚动条变化。
+* fixed：  
+	*有、无已定位的祖先元素，都以浏览器可视窗口为基准偏移。    
+	*位置固定，不会随滚动条变化。（固定浮在上面）
+* z-index 只有设置了相对定位，或者绝对定位的元素才具有的属性
 
-# 运算符operator
-1、条件运算符 c?a:b c为true 则取a,否则取b  
-2、逗号运算符 a,b 例如 var s = (1,2,3),则s依次赋值，最后输出为3  
-3、delete运算符 delete obj.x 删除对象obj中的x属性     
-> 在IE9下，obj中必须configurable:true 才可以删除，否则无效 
-
-4、in运算符 判断obj是否有值或window里是否有变量，返回bool值   
-    例如 attr in json 或 'document' in window  
-5、instanceof 判断对象类型 {} instanceof Object // true  
-6、new运算符 创建一个新对象 new obj / new array ...   
-* 可以通过```hasOwnProperty()```判断属性是对象上的还是对象的原型链上的 (```in```判断obj是否有值,因此只要赋值就会返回true)
-    ```
-    function foo(){}
-    foo.prototype.x = 1 //原形链赋值
-    var obj = new foo() //obj.x = 1
-    obj.hasOwnProperty('x') -> false
-    obj.__proto__.hasOwnProperty('x') -> true
-    obj.y = 1 //obj.hasOwnProperty('y') -> true
-    
-    ```
-7、this对象 全局用指向window，函数内指向函数本身，浮动指针  
-8、typeof 判断对象，返回对象类型 例如 typeof 100 === 'number' // true  
-9、void 一元的，判断所有值，返回均为undefined
-
-# block v var语句
-#### block - ```{..}```定义  
-在ES6之前，forloop中的var i ```for(var i=0;i<arr.length;i++)```是可以在之后取值的```console.log(i)```  
-从ES6开始，let的出现-有了块级作用域的概念(local variable)
+* margin选择器设置的属性会和fixed属性设置重叠，导致<body>层与浏览器可视化窗口产生间距。在标准文档流中，两个元素，上外边距和上外边距，或者上外边距和下外边距相遇时，当两个标签都在标准文档流中时，会选择较大的上外填充
+	* 可用解决方法：把后面的元素body设置margin-top：（fixed定位的元素高度）
+* 顶部固定层  
+	#top----position:fixex;(top:0;left:0;取决于祖先元素是否定位且有偏移量)  
+	#mainbody---margin-top:(#top高度+原有间距)px
+	
+# Paragraph
 ```
-function letTest() {
-  let x = 31;
-  if (true) {
-    let x = 71;  // different variable
-    console.log(x);  // 71
-  }
-  console.log(x);  // 31
-}
+letter-spacing
+word-spacing
+line-height: 2em;
+text-align - 为块状元素中的文本、图片设置居中样式
 ```
-#### var - ```var a =1``` 变量定义
-误区：在函数里创建 ```var a = b = 1```是有local scope的  
-解答：b相当于隐式创建的全局变量，因此即使是在函数内定义，在函数外b依旧可以被访问到，而a是不可以的  
 
-解决办法是利用逗号 ```var a, b = 1 ``` a和b都变成了local variable
+# DIV elements
+Block - elements with ```display:block```  
+Inline - ```display: inline```  
+*	内联元素特点：
+		和其他元素都在一行上；  
+		元素的高度、宽度及顶部和底部边距不可设置；  
+		元素的宽度就是它包含的文字或图片的宽度，不可改变。  
+	span  
+	
+Inline-block - 
+* 和其他元素都在一行上；
+	元素的高度、宽度、行高以及顶和底边距都可设置  
+	img, input
+
+总体　　
+
+![alt text](http://img.imooc.com/539fbb3a0001304305570259.jpg "Logo Title Text 1")
+
+填充- 元素内容与边框之间是可以设置距离的
+边界- 元素与其它元素之间设置距离
+> padding在边框里，margin在边框外。  
+
+# CSS的3种基本布局模型 Flow、Layer 和 Float
+# 相对参照元素进行定位
+e.g. putting text on top of an image div
+* 参照定位的元素必须是相对定位元素的前辈元素
+	```
+	<div id="box1"><!--参照定位的元素-->
+	    <div id="box2">相对参照元素进行定位</div><!--相对定位元素-->
+	</div>
+	```
+# 居中  
+1.行内元素，水平居中是通过给父元素设置 text-align:center 来实现  
+2.定宽块状元素：fixed width,flexible height block element, 设置margin: 0 auto  
+3.不定宽块状元素：
+* 3.1 加入table标签:  
+第一步：为需要设置的居中的元素外面加入一个 table 标签 ( 包括 <tbody>、<tr>、<td> )。  
+第二步：为这个 table 设置“左右 margin 居中”（这个和定宽块状元素的方法一样）。
+
+* 3.2 改变块级元素的 display 为 inline 类型，然后使用 text-align:center 来实现居中效果。   
+这种方法相比第一种方法的优势是不用增加无语义标签，简化了标签的嵌套深度，但也存在着一些问题：它将块状元素的 display 类型改为 inline，变成了行内元素，所以少了一些功能，比如设定长度值。
+* 3.3 通过给父元素设置 float, position:relative 和 left:50%，  
+子元素设置 position:relative 和 left:-50% 来实现水平居中。  
+    ```
+    把父元素浮动到左边,同时向右偏移50%,相当于把父元素的左边缘对齐到整行的中间  
+    把子元素向右偏移50%,这个50%是父元素的50%,即是wrap的50%,而此时wrap的宽度刚好就等于子元素的宽度,也是子元素本身的50%,这样刚好就居中了  
+    可以在.wrap中添加一行clear：both（作用是清除两侧浮动，独占一行），这样“我们来学习一下这种方法”这句就不会把“1 2 3”这句遮住
+    ```
+这种方法可以保留块状元素仍以 display:block 的形式显示，优点不添加无语议表标签，不增加嵌套深度，但它的缺点是设置了 position:relative，带来了一定的副作用。
+
+# 垂直居中：
+1. 单行内容垂直居中：设行高（line-height）与容器高（height）为相同值，如height=100px;line-height=100px;。  
+2. 利用vertical-align:middle;属性：  
+* 2.1 将元素插入到<table>,<td>或<th>中，利用<td>或<th>的vertical-align: middle;属性（vertical-align: middle;只对<td>或<th>有效）。
+* 2.2 对元素设置display:table-cell;属性，触发vertical-align属性，可使之在容器内居中，但会使块级元素，变为行内块级元素。
+
+# Vertical Navigation
+* 把a标签定义成行内块
+
+* 文字缩进20px
+
+# Horizontal Nav
+* add float left and delete ul's width
+
+# Inner Nav
+```
+    ul>li ul{transition:height 0.3s;}
+    ul>li:hover ul{height: 120px;}
+```
