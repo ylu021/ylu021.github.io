@@ -36,7 +36,7 @@ Copy paste duplicate lines - CTRL + SHIFT + D
 ```
 7、Ctrl+}/]等同于tab：增加缩进；  
 8、Ctrl+{/[等同于Shift+tab：减少缩进。  
-9、标签名+{...}+Ctrl+E：自动排版，如：`h1{this is h1} --> <h1>this is h1</h1>`  
+9、标签名+{...}+Ctrl+E：自动排版，如：`h1{title} -> <h1>title</h1>`  
 10、h1+Ctrl+E --> `<h1></h1>`  
 11、Ctrl+E：html自动排版  
 12、Ctrl+Shift+  
