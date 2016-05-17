@@ -110,3 +110,8 @@ function letTest() {
 解答：b相当于隐式创建的全局变量，因此即使是在函数内定义，在函数外b依旧可以被访问到，而a是不可以的  
 
 > 解决办法是利用逗号 ```var a, b = 1 ``` a和b都变成了local variable
+
+# 函数对象Create Object
+函数声明:`function fd(){}`在声明之前可以调用fd()  
+函数表达式： `var fd=function(){}`，不可以在函数表达式之前调用fd(),因为还未创建
+
