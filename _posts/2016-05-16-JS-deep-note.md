@@ -8,17 +8,15 @@ layout: post
 Object对象类型，对象类型又包括--array,date,function
 
 # 巧用+/-规则转换类型
-
 把字符串变量转换成数字：num-0  
 把数字变量转化成字符串型：num+''　　
 # 比较
-#### 类型相同  
-`null===null`  
-`undefined===undefined`  
+### 类型相同  
+`null===null`, `undefined===undefined`  
 
 NaN和任何东西都不相等，包括它本身  ```NaN≠NaN```  
 Object同类型不相等，除非和它本身作比较 ``` new object() ≠ new object()```, ```x===x```  
-#### 类型不同
+### 类型不同
 a === b 类型不同直接返回false  
 a  == b 类型不同会尝试隐式转换(尝试类型转换和比较)  
     number== string // 把字符串转化为数字比较  
@@ -33,7 +31,7 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 
 # 类型检测
 5种方法  
-1. typeof 最简单的方法，以字符串的方式返回类型 ```typeof "bob" === "string"```  
+1. typeof 最简单的方法，以字符串的方式返回类型 `typeof "bob" === "string"`  
 
     > 弊端是null的失效(typeof返回的是"object"，因此不可以用来检测)  
 
@@ -41,17 +39,17 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 
     > 弊端原生对象在不同iframe和window检测失效  
 
-    ```
-    function Student(){}
-    function Person(){}
-    Student.prototype = new Person() //student指向person
-    var bob = new Student()
-    //bob instanceof student -> true
-    //bob instanceof person -> true
-    var bob_mom = new Person()
-    //mom instanceof student -> false
-    //mom instanceof person -> true
-    ```
+```
+function Student(){}
+function Person(){}
+Student.prototype = new Person() //student指向person
+var bob = new Student()
+//bob instanceof student -> true
+//bob instanceof person -> true
+var bob_mom = new Person()
+//mom instanceof student -> false
+//mom instanceof person -> true
+```
 3. Object.prototype.toString.apply(函数)
     > 弊端null和undefined失效(IE返回object)
 
@@ -78,6 +76,7 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 5、instanceof 判断对象类型 {} instanceof Object // true  
 6、new运算符 创建一个新对象 new obj / new array ...   
 * 可以通过```hasOwnProperty()```判断属性是对象上的还是对象的原型链上的 (```in```判断obj是否有值,因此只要赋值就会返回true)
+    
     ```
     function foo(){}
     foo.prototype.x = 1 //原形链赋值
@@ -92,9 +91,10 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 9、void 一元的，判断所有值，返回均为undefined
 
 # block v var语句
-#### block - ```{..}```定义  
+### block - ```{..}```定义  
 在ES6之前，forloop中的var i ```for(var i=0;i<arr.length;i++)```是可以在之后取值的```console.log(i)```  
 从ES6开始，let的出现-有了块级作用域的概念(local variable)
+
 ```
 function letTest() {
   let x = 31;
@@ -105,8 +105,8 @@ function letTest() {
   console.log(x);  // 31
 }
 ```
-#### var - ```var a =1``` 变量定义
+### var - ```var a =1``` 变量定义
 误区：在函数里创建 ```var a = b = 1```是有local scope的  
 解答：b相当于隐式创建的全局变量，因此即使是在函数内定义，在函数外b依旧可以被访问到，而a是不可以的  
 
-解决办法是利用逗号 ```var a, b = 1 ``` a和b都变成了local variable
+> 解决办法是利用逗号 ```var a, b = 1 ``` a和b都变成了local variable
