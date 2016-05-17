@@ -43,11 +43,11 @@ Copy paste duplicate lines - CTRL + SHIFT + D
 
 ## Snippet及相关插件
 
-1. ctrl+shift+p 输入 snippet：function 自动生成function的基本结构
-2. 应用自动补全功能, 输入"fun",见提示后按Tab键或Enter键
-3. Tab键能快速定位下一个name位置
-4. 安装 Javascript& NodeJS Snippets插件,jQuery插件(get,post),和insert callback插件(alt+C)
-5. 具体的snippet在插件官网查看
+1、ctrl+shift+p 输入 snippet：function 自动生成function的基本结构  
+2、应用自动补全功能, 输入"fun",见提示后按Tab键或Enter键  
+3、Tab键能快速定位下一个name位置  
+4、安装 Javascript& NodeJS Snippets插件,jQuery插件(get,post),和insert callback插件(alt+C)  
+5、具体的snippet在插件官网查看  
 
 ##目录创建新文件
 使用Advance new file 插件来创建新文件 ctrl+Alt+N
