@@ -26,12 +26,13 @@ Copy paste duplicate lines - CTRL + SHIFT + D
 4、Ctrl+Enter：当前行代码下一换行。  
 5、Ctrl+Shift+Enter：当前行代码上一换行。  
 6、ul>.item$*3+Ctrl+E（注意：把光标放在当前行的末尾）  
+
 ```
-    <ul>
-		<li class="item1"></li>
-		<li class="item2"></li>
-		<li class="item3"></li>
-	</ul>
+<ul>
+	<li class="item1"></li>
+	<li class="item2"></li>
+	<li class="item3"></li>
+</ul>
 ```
 7、Ctrl+}/]等同于tab：增加缩进；  
 8、Ctrl+{/[等同于Shift+tab：减少缩进。  
