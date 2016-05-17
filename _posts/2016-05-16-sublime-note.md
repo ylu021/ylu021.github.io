@@ -1,3 +1,8 @@
+---
+title: Sublime应用笔记
+layout: post
+---
+
 # Sublime hotkeys
 Copy paste duplicate lines - CTRL + SHIFT + D
 
