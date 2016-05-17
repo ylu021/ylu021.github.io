@@ -3,7 +3,7 @@ title: JS进阶笔记
 layout: post
 ---
 
-# JS类型  
+## JS类型  
 五大原始类型--number,string,boolean,null,undefined  
 Object对象类型，对象类型又包括--array,date,function
 
