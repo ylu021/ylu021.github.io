@@ -66,7 +66,6 @@ var bob_mom = new Person()
 6. 对象创建表达式 // new Func(1,2)、new Object
 
 # 运算符operator
----
 1、条件运算符 c?a:b c为true 则取a,否则取b  
 2、逗号运算符 a,b 例如 var s = (1,2,3),则s依次赋值，最后输出为3  
 3、delete运算符 delete obj.x 删除对象obj中的x属性     
