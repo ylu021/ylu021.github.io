@@ -12,6 +12,8 @@ links:
   - name:         Posts
     url:          http://ylu021.github.io
     external:     false
+  - name:         Category
+    url:          /archive
   - name:         GitHub
     url:          http://github.com/ylu021
     external:     true
