@@ -1,6 +1,11 @@
+---
+title: JS进阶笔记
+layout: post
+---
+
 # JS类型  
-五大原始--number,string,boolean,null,undefined  
-一种object对象类型，对象类型又包括--array,date,function
+五大原始类型--number,string,boolean,null,undefined  
+Object对象类型，对象类型又包括--array,date,function
 
 # 巧用+/-规则转换类型
 
@@ -8,8 +13,9 @@
 把数字变量转化成字符串型：num+''　　
 # 比较
 #### 类型相同  
-```null===null```  
-```undefined===undefined```  
+`null===null`  
+`undefined===undefined`  
+
 NaN和任何东西都不相等，包括它本身  ```NaN≠NaN```  
 Object同类型不相等，除非和它本身作比较 ``` new object() ≠ new object()```, ```x===x```  
 #### 类型不同
@@ -26,10 +32,13 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 等到你的操作结束之后这个临时产生的包装类型就会自动销毁。```string.tempobj```
 
 # 类型检测
-5种方法
-1. typeof 最简单的方法，以字符串的方式返回类型 ```typeof "bob" === "string"```
-    > 弊端是null的失效(typeof返回的是"object"，因此不可以用来检测)
-2. 对象 instanceof 函数 原形链
+5种方法  
+1. typeof 最简单的方法，以字符串的方式返回类型 ```typeof "bob" === "string"```  
+
+    > 弊端是null的失效(typeof返回的是"object"，因此不可以用来检测)  
+
+2. 对象 instanceof 函数 原形链  
+
     > 弊端原生对象在不同iframe和window检测失效  
 
     ```
