@@ -115,3 +115,5 @@ function letTest() {
 函数声明:`function fd(){}`在声明之前可以调用fd()  
 函数表达式： `var fd=function(){}`，不可以在函数表达式之前调用fd(),因为还未创建
 
+# for in - 短处是不按顺序，enumerable设定为false后失效
+
