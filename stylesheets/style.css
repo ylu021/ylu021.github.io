@@ -351,9 +351,6 @@ img {
 
 .paging a {
   opacity: 0.25; 
-  /*new*/
-  position:absolute;
-  right: 30px;
 }
 .paging a:hover {
   opacity: 0.7;
@@ -364,6 +361,6 @@ img {
   left: 50%;
   font-size: 60px; }
 .paging .left {
-  margin-left: -340px; }
+  margin-left: -390px; }
 .paging .right {
-  margin-left: 320px; }
+  margin-left: 370px; }
