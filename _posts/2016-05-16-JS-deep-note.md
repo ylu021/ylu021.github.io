@@ -3,15 +3,14 @@ title: JS进阶笔记
 layout: post
 ---
 
-## JS类型  
-<hr>
+# JS类型  
 五大原始类型--number,string,boolean,null,undefined  
 Object对象类型，对象类型又包括--array,date,function
 
-## 巧用+/-规则转换类型
+# 巧用+/-规则转换类型
 把字符串变量转换成数字：num-0  
 把数字变量转化成字符串型：num+''　　
-## 比较
+# 比较
 ### 类型相同  
 `null===null`, `undefined===undefined`  
 
@@ -25,12 +24,12 @@ a  == b 类型不同会尝试隐式转换(尝试类型转换和比较)
     object == number|string // 尝试对象转为基本类型 
 ```new String('hi')=='hi' //true```  
 
-## 包装类型
+# 包装类型
 number string boolean 三种原始数据类型是有各自对应的对象包装类型的  
 如果对一个原始的数据类型比如说var string = "xiaoyu" 进行对象的操作js会智能地将原始数据类型转换为一个对应的包装类型  ```string.length```  
 等到你的操作结束之后这个临时产生的包装类型就会自动销毁。```string.tempobj```
 
-## 类型检测
+# 类型检测
 5种方法  
 1. typeof 最简单的方法，以字符串的方式返回类型 `typeof "bob" === "string"`  
 
@@ -58,7 +57,7 @@ var bob_mom = new Person()
 × ```arr1.sort().toString===arr2.sort().toString```  
 × 比较类型保险款```Object.prototype.toString.apply(null)-> [Object Null]```
 
-## 表达式expression
+# 表达式expression
 1. 原始表达式 // 常量、直接量、关键字、变量 3.14、"test"、this、null、i、k、j
 2. 初始化表达式 //[1,2]、{x:1, y:2}
 3. 函数表达式 //  var fe = function(){}、(function(){})()
@@ -66,7 +65,7 @@ var bob_mom = new Person()
 5. 调用表达式 // func()；
 6. 对象创建表达式 // new Func(1,2)、new Object
 
-## 运算符operator
+# 运算符operator
 ---
 1、条件运算符 c?a:b c为true 则取a,否则取b  
 2、逗号运算符 a,b 例如 var s = (1,2,3),则s依次赋值，最后输出为3  
@@ -92,7 +91,7 @@ var bob_mom = new Person()
 8、typeof 判断对象，返回对象类型 例如 typeof 100 === 'number' // true  
 9、void 一元的，判断所有值，返回均为undefined
 
-## block v. var语句
+# block v. var语句
 ### block - ```{..}```定义  
 在ES6之前，forloop中的var i ```for(var i=0;i<arr.length;i++)```是可以在之后取值的```console.log(i)```  
 从ES6开始，let的出现-有了块级作用域的概念(local variable)
