@@ -9,12 +9,10 @@ return语句或this作为返回值
 ## 不同创建方法
 * 函数声明 `function foo(){}`  
 声明会被前置 - 函数声明位置之前可以调用(类似于c在最前面建了constructor)
-		
 		var sum = add(a,b)
 		function add (a,b){
 			return a+b		
-		} 
- 
+		}  
 > 因此声明也不允许IEF立即调用 `function add(a,b){return a+b}()->NaN`  
 * 函数表达式  
 		var add = function(){}//function variable
