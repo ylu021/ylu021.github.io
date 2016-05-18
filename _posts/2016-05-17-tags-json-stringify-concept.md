@@ -5,7 +5,7 @@ layout: post
 ---
 #标签
 ##属性标签
-查看
+查看  
 * Object.getOwnPropertyDescriptor({pro:true},'tagname')  
 * Object.keys()
 
@@ -15,13 +15,16 @@ layout: post
 ## class标签
 
 ##extensible标签
-isExtensible(obj)
+
+```
+isExtensible(obj)  
 preventExtensions(obj) 不可以添加新的属性yo
 obj.z = 1不可以yo
 .seal(obj) //不可以改
 configurable变为false
 .freeze(obj)//不可写
 writable变为false
+```
 
 #序列化
 `JSON.stringify(obj)`  
@@ -35,13 +38,13 @@ var obj = JSON.parse('{`"x"`:1}')
 > 合法的JSON的属性必须用双引号引起来
 
 #### inner函数
-- toJSON
+- toJSON  
 o里面有o1:1和o2:2,利用
 toJSON: function(){
 	return this.o1+this.o2
 }的方法可以得到JSON.stringify=> o: 3
 
-- 自定义toString/valueOf
+- 自定义toString/valueOf  
 obj.toString/valueOf = function(){return this.x + this.y}
 "result "+ obj //"result 3" obj.x 和y还是可以被访问到的
 
