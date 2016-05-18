@@ -43,7 +43,7 @@ o里面有o1:1和o2:2,利用
 `toJSON: function(){return this.o1+this.o2}`的方法可以得到JSON.stringify=> o: 3
 
 - 自定义toString/valueOf  
-`obj.toString/valueOf = function(){return this.x + this.y}`
+`obj.toString/valueOf = function(){return this.x + this.y}`  
 "result "+ obj //"result 3" obj.x 和y还是可以被访问到的
 
 > valueOf是返回对象原始值,toString是将转化成字符串。  
