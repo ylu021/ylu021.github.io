@@ -1,3 +1,8 @@
+---
+title: JS函数
+layout: post
+---
+---
 # 函数(对象)
 
 return语句或this作为返回值
