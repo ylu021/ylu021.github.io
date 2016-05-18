@@ -25,6 +25,7 @@ return语句或this作为返回值
 		var add = function foo(){}//NFE命名式 
 
 > 函数表达式不可以通过函数的名字去调用 `foo()//报错，add()//正常`
+
 * **不懂** NFE命名式(不常见)  
 
 		var func = function nfe(){}//出错

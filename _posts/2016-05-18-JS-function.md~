@@ -16,16 +16,22 @@ return语句或this作为返回值
 		} 
  
 > 因此声明也不允许IEF立即调用 `function add(a,b){return a+b}()->NaN`  
+
 * 函数表达式  
+
 		var add = function(){}//function variable
 		(function(){})()//IEF立即执行
 		return function(){}//first-class function
 		var add = function foo(){}//NFE命名式 
+
 > 函数表达式不可以通过函数的名字去调用 `foo()//报错，add()//正常`
 * **不懂** NFE命名式(不常见)  
+
 		var func = function nfe(){}//出错
 		var func = function nfe(){ nfe() }//递归callback调用
+
 * Function构造器(不常见)  
+
 		var func = new Function('a','b','console.log(a+b)')
 		
   > local不可访问（因为被提前声明， localVal 显示为underfined），global变量可以访问  
@@ -36,6 +42,7 @@ return语句或this作为返回值
 * 全局 this.document === document  
 * 函数全局 function foo(){return this//window}  
 * 作为对象方法的函数  
+
 		var o = {
 			prop: 37,
 			f: function(){return this.prop}
@@ -48,6 +55,7 @@ return语句或this作为返回值
 		console.log(o2.f())
 
 * 对象原型链上  
+
 		var yuanxing = {
 			f: function(){
 				return this.a+this.b
@@ -60,6 +68,7 @@ return语句或this作为返回值
 		console.log(o.f())//3
 
 * get/set方法与this  
+
 		function product(){ return this.a*this.b }
 		var num = { 
 			a:1, 
@@ -72,15 +81,19 @@ return语句或this作为返回值
 		})//添加新的get
 		console.log(num.product)//-1
 		console.log(num.sum)//0
+
 * new构造器与this  
+
 		function foo(){ this.a = 37 }
 		var obj = new foo()
 		console.log(obj.a)//37 
+
   > 当使用new构造器创建函数时没有return，将this作为返回值  
 
 * call/apply方法与this - 改变函数体内部 this 的指向  
   whitedog = {food:"bone"}   
   blackcat.say.call(whitedog)来让this指向whitedog并调用blackcat的say方法  
+
 		function cat(){}
 		cat.prototype = {
 			food:'fish',
@@ -95,7 +108,9 @@ return语句或this作为返回值
 		blackcat.say.call(whitedog)
 
   > 什么时候要用 - 比如说想要调用Object.prototype.toString，但是想指定其中的某一个this时，就可以用Object.prototype.toString.call（）这样的方法去调用没办法直接调用的方法。  
+
 * bind绑定  
+
 		var g = function f(){return this.a}.bind({a:"test"})
 		console.log(g())//test
 
