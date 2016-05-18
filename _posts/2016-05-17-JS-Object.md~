@@ -91,28 +91,5 @@ layout: post
     console.log(obj.x)//2
     console.log("inherit from foo"+obj.hasOwnProperty('x'))//x被创建
     console.log(foo.x)//1 foo的确没有被改变
-
-### my例子
-
-!["chart"](http://img.imooc.com/573bc7d40001ac7d12800720.jpg)  
-
-		var foo = {};
-		foo.x = 1;
-		var obj = Object.create(foo);
-		obj.x = 2;
-		/*这里能给予赋值是很正确的，可以通俗理解为obj和foo都是普通对象，普通对象当然能给自己添加属性赋值。
-		只是obj这个家伙偷懒‘引用’了foo的属性。但不影响obj有权利随意给自己添加属性不受你foo的限制，
-		所以obj.x可以随意赋值，但注意其实这没有改变foo.x的值*/
- 
-		var foo = {};
-		Object.defineProperty(foo,'x',{value:1});
-		var obj = Object.create(foo);
-		/×这里就不一样了，Object.defineProperty(）就是皇上的圣旨，给了foo特权，这个特权就是obj必须服从
-		foo的指挥，只要foo说x是什么样子，那obj的x就是什么样子，所以这里不管obj.x赋值是多少对不起你都
-		和foo.x的值一样*/
- 
-		/*obj.x想要翻身当主人怎么办？ 当然还是需要Object.defineProperty(）给的圣旨才行,或者writtable设为true*/
-		Object.defineProperty(obj,'x',{value:2});
-
     
 
