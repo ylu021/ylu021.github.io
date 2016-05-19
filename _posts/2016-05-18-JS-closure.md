@@ -1,3 +1,8 @@
+---
+title: JS闭包
+layout: post
+---
+---
 ## arguments实际传入的参数
 !["chart"](http://img.mukewang.com/5608d60d000103e812800720.jpg)  
 
