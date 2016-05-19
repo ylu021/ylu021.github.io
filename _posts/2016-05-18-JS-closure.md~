@@ -11,27 +11,7 @@ layout: post
 > 因此直接call f1() 没有返回值，要在f1里return f2，var result = f1()，再call result()  
 > 或者f1里直接call f2(), 这样f1()就有返回值了
 
-		function f1(){
-			var n = 1
-			function f2(){console.log(n)}
-			f2()				
-		}
-		f1()//1		
-
   闭包的第二种用途 - 让局部变量保持在内存中(localval可以连续调用)  
-	
-		function f1(){
-			var n=999
-			nAdd=function(){n+=1}
-			function f2(){
-				alert(n);
-			}
-			return f2;
-		}
-		var result = f1()
-		result()//999
-		nAdd()
-		result()// 1000
 
 好处  
 函数有自己的作用域，定义的变量外部访问不到。封装具体的复杂的函数逻辑  
