@@ -116,9 +116,25 @@ return语句或this作为返回值
 		console.log(g())//test
 
 
-## arguments
+## arguments实际传入的参数
+!["chart"](http://img.mukewang.com/5608d60d000103e812800720.jpg)  
 
-## 作用域scope
+bind & currying - 可以重复使用类似的函数  
+		
+		function abwhatever(a,b,c){ console.log(a,b,c) }
+		var Default = abwhatever.bind(undefined/null,'a','b') //没有this传入, a和b被固定住
+		Default('z')//a,b,z
+		Default('yo')//a,b,yo
+
+bind & new - bind失效  
+		
+		function foo(){ this.b = 100; return this.a}
+		var func = foo.bind({a:1})
+		func()//1
+		new func()//this指向原来的，a没有值，用this.b
+
+
+## 作用域scope (link)
 
 ## 不同调用方式
 * 直接调用 foo()  
