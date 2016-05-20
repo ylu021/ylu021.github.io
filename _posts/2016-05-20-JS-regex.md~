@@ -1,0 +1,60 @@
+# Regex正则 
+## 基础  
+
+`/`起始和结尾
+`.` - 代表任意，除了换行/n,/r etc  
+`\d`- 0-9  
+`\D`- !(0-9)  
+`\w`- 0-9或a-zA-Z,_  
+`\W`- !(\w)  
+`\s`- 空格，tab，\n\r etc  
+`\S`- !(\s)  
+`\t\r\n\v\f` - tab，回车，换行，垂直|，换页  
+
+范围  
+[] - 字符范围, eg [a-zA-Z]  
+[^..] - 字符意外  
+^ - 行首  
+$ - 行尾  
+`\b` - 零宽单词边界 eg 'a no'  
+`\B` - !(\b)  
+
+符号  
+`\` - escape符号  
+
+分组  
+`(x)`, `\n` - e.g. (abc)\n 表示abc再重复n次  
+`(?:x)` - 仅分组，重复没有效果 eg `(?:abc)(def)\1.test('abcdefdef')`  
+
+重复  
+贪婪算法 x* >=0, x+ >=1  
+eg abc* 匹配 ab, abc, abccccc  
+   abc+ 匹配 abc,abccccc  
+
+非贪婪算法 x*? == 0, x+? ==1  
+  eg abc*? 匹配 ab  
+     abc+? 匹配 abc  
+
+x? 出现0或1次  
+x|y x或y  
+  eg ab|cd|ef 匹配 ab或cd或ef  
+x{n} - 固定n次  
+x(n,) - >= n次  
+x(n,m) - n-m次  
+
+标志类flag  gim
+g - global  
+i - ignoreCase  
+m - multiline - 跨行检索  
+
+## 相关方法
+
+.search(regex) - 返回找到位置index  
+.replace(regex,replacement)  
+.match(regex) - 返回匹配结果数组  
+.split(regex) - 返回数组
+
+
+
+
+
