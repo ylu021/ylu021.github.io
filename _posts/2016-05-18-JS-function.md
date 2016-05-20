@@ -21,7 +21,7 @@ return语句或this作为返回值
 
 		var add = function(){}//function variable
 		(function(){})()//IEF立即执行
-		return function(){}//first-class function
+		return function(){}//first-class function->闭包closure
 		var add = function foo(){}//NFE命名式 
 
 > 函数表达式不可以通过函数的名字去调用 `foo()//报错，add()//正常`
