@@ -1,0 +1,103 @@
+# OOP
+key: 继承，封装，多态，抽象  
+
+## 基于原型的继承
+
+!["protochain"](http://img.mukewang.com/56f9f2c9000151f812800720.jpg)
+
+Prototype - 预设的属性，并可以chain更多的属性`Foo.prototype.x = 1`  
+原型 - 对象上的原型，构造器的prototype属性`__proto__`指向prototype  
+> _proto_是实例对象的一个引用  
+> 而prototype是一个构造器的属性对象  
+> 每个属性对象里有一个_proto_引用  
+
+		function Person(name,age){
+			this.name = name
+			this.age = age
+		}
+
+		Person.prototype.hi = function(){
+			console.log("Hi my name is "+this.name+",I'm "+this.age+" years old now")
+		}
+
+		Person.prototype.legs = 2
+		Person.prototype.arms = 2
+		Person.prototype.walk = function(){
+			console.log(this.name+"is walking..")
+		}
+
+		function Student(name,age,className){
+			Person.call(this,name,age)//create a person this
+			this.className = className
+		}
+
+		//拿到person的原型来建学生的原型
+		Student.prototype = Object.create(Person.prototype)//创建一个空对象并且原型指向参数。
+		//如果直接赋值student.prototype = person.prototype
+		//student添加自己的方法时person也会添加同样的方法..
+		Student.prototype.constructor = Student//如果不设置，constructor指向person
+
+		//覆盖person.hi()，因为prototype从下往上查找，找到就不找了科科
+		Student.prototype.hi = function(){
+			console.log("Hi my name is "+this.name+",I'm "+this.age+" years old now, and from "+this.className+".")
+		}
+
+		Student.prototype.learn = function(subject){
+			console.log(this.name+" is learning "+subject+" at "+this.className)
+		}
+
+		var bosn = new Student('Bosn',27,'Class 3, Grade 2')
+		bosn.hi()
+		console.log(bosn.legs)
+		bosn.walk()
+		bosn.learn('math')
+
+查看原型  
+foo.__proto__ 或者Object.getPrototypeOf(foo) 是不是 === Object.prototype  
+
+> bind返回的变量没有prototype  
+> Object.create(null)没有prototype，`__proto__`  
+
+修改prototype  
+动态修改prototype属性`Student.prototype.x`会影响已创建和新创建的实例的。
+修改整个prototype赋值给新的对象对已经创建的实例没有影响，会影响**新**创建的实例。
+`Student.prototype = {y:2}, 但是bosn还是有以前继承的x属性，但是新的nanny就不会有x了`
+
+# new构造器vobject.create建造的prototype
+	Student.prototype = new Person()的问题 - 在有函数的情况下，会很模糊科科  
+	Student.prototype = new Person('mary','the only student keke')  
+	最好的办法就是Object.create创建**空对象**并指向参数Person.prototype  
+	图片右边是ES5以下兼容  
+
+!["img"](http://img.mukewang.com/573d2915000173be12800720.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
