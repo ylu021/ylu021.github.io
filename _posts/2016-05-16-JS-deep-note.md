@@ -35,7 +35,7 @@ number string boolean 三种原始数据类型是有各自对应的对象包装�
 
     > 弊端是null的失效(typeof返回的是"object"，因此不可以用来检测)  
 
-2. 对象 instanceof 函数 原形链  
+2. 对象 instanceof 函数 原形链  - 判断右边的原型链上有没有这个函数对象
 
     > 弊端原生对象在不同iframe和window检测失效  
 
