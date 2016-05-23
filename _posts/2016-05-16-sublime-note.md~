@@ -48,7 +48,6 @@ Copy paste duplicate lines - CTRL + SHIFT + D
 3、Tab键能快速定位下一个name位置  
 4、安装 Javascript& NodeJS Snippets插件,jQuery插件(get,post),和insert callback插件(alt+C)  
 5、具体的snippet在插件官网查看  
-6、cl + tab - console.log
 
 ##目录创建新文件
 使用Advance new file 插件来创建新文件 ctrl+Alt+N
