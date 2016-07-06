@@ -1,6 +1,7 @@
 ---
 title: JS进阶笔记
 layout: post
+category: JS
 ---
 
 # JS类型  
