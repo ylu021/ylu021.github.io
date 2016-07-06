@@ -1,5 +1,6 @@
 ---
 title: Category
+layout: archive
 ---
 
 {% for cat in site.categories %}
