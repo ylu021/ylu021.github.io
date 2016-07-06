@@ -18,8 +18,8 @@ links:
     url:          http://github.com/ylu021
     external:     true
   - name:         Tags
-    url:          /tag.html
-    external:     true
+    url:          /tag
+    external:     false
 highlighter:      pygments
 permalink:        pretty
 markdown:         redcarpet
