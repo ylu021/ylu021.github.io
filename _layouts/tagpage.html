@@ -4,6 +4,11 @@ layout: page
 
 <h1>{{ page.tag }}</h1>
 
+{% for tag in site.tags %}
+  {% assign t = tag | first %}
+  {% assign posts = tag | last %}
+
+{{ t | downcase }}
 <ul>
 {% for post in posts %}
   {% if post.tags contains t %}
@@ -13,3 +18,4 @@ layout: page
   {% endif %}
 {% endfor %}
 </ul>
+{% endfor %}
