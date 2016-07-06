@@ -1,6 +1,6 @@
 ---
-title: Category
-layout: archive
+layout: page
+title: Archive
 ---
 
 {% for cat in site.categories %}
