@@ -17,6 +17,9 @@ links:
   - name:         GitHub
     url:          http://github.com/ylu021
     external:     true
+  - name:         Tags
+    url:          /tag
+    external:     true
 highlighter:      pygments
 permalink:        pretty
 markdown:         redcarpet
