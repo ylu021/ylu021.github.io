@@ -2,6 +2,7 @@
 title: JS进阶笔记
 layout: post
 category: JS
+tags: [web, note]
 ---
 
 # JS类型  
