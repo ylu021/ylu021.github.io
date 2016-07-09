@@ -369,12 +369,16 @@ img {
   margin-left: 370px; }
 
 /*override*/
+@import url(//fonts.googleapis.com/css?family=Oswald:400|Yanone+Kaffeesatz:400,700);
+
 body{
     background: #dd1021;
 }
 
 header{
     color: white;
+    letter-spacing: 1px;
+    font-family: 'Yanone Kaffeesatz', 'Open Sans', sans-serif;
 }
 header h1 {
     color: white;
