@@ -406,8 +406,14 @@ ul.posts li:hover{
   background: #ffffed;
 }
 
-.circle {
-  height: 500px;
-  width: 500px;
-  border-radius: 50%;
+a.main{
+    color: #333;
+    font-weight: 700;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+a.main:hover{
+    color: white;
+    background: yellowgreen;
 }
