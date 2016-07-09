@@ -367,3 +367,28 @@ img {
   margin-left: -390px; }
 .paging .right {
   margin-left: 370px; }
+
+/*override*/
+body{
+    background: #dd1021;
+}
+
+header{
+    color: white;
+}
+header h1 {
+    color: white;
+    font-size: 12vw;
+}
+
+header h1:hover{
+    color: yellow;
+}
+
+header h2{
+    font-size: 5vw;
+}
+
+header p{
+    font-size: 10px;
+}
