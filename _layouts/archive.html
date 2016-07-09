@@ -7,7 +7,7 @@ layout: page
   {% assign posts = category | last %}
 
 <h1>{{ t | downcase }}</h1>
-<ul>
+<ul class="posts">
 {% for post in posts %}
   {% if post.categories contains t %}
   <li>
