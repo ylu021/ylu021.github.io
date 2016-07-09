@@ -5,12 +5,12 @@ category: HTML
 tags: data_passing, view_render
 ---
 ---
-# data-<name> 
+# data-name 
 
 > 'a great marriage of server side and client side' -Stephen Calvert, Quora  
 > resources: https://www.quora.com/What-is-the-best-way-to-pass-server-side-variables-to-client-side-JavaScript  
 
-HTML- <div id="mydiv" `data-myval`="10"></div>  
+HTML- `<div id="mydiv" `data-myval`="10"></div>`  
 JS  
 - `var a = $('#mydiv').data('myval');` //getter  
 - `$('#mydiv').data('myval',20);` //setter  
