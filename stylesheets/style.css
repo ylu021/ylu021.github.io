@@ -386,7 +386,7 @@ header h1 {
 }
 
 header h1:hover{
-    color: yellow;
+    color: #ffc300;
 }
 
 header h2{
@@ -395,4 +395,19 @@ header h2{
 
 header p{
     font-size: 10px;
+}
+
+ul.posts a {
+    color: #333; 
+    font-size: larger;
+}
+
+ul.posts li:hover{
+  background: #ffffed;
+}
+
+.circle {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
 }
