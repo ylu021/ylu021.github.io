@@ -1,6 +1,8 @@
 ---
-title: Progress Bar Doughnut Chart JS script
+title: ProgressBar.js Doughnut Chart
 layout: post
+category: JS
+tags: chart
 ---
 ---
 
